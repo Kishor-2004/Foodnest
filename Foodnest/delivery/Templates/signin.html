@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FoodNest | Sign In</title>
+    <link rel="stylesheet" href="{% static 'signin.css' %}">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="card">
+            <h1 class="brand">Welcome back</h1>
+            <p class="tagline">Sign in to continue ordering from FoodNest.</p>
+
+            <form method="post" class="form">
+                {% csrf_token %}
+                <div class="field">
+                    <label for="username">Username or Email</label>
+                    <input id="username" name="username" type="text" required>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" required>
+                </div>
+
+                <div class="extras">
+                    <label class="remember">
+                        <input type="checkbox" name="remember">
+                        Remember me
+                    </label>
+                    <a href="#" class="small-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn-primary">Sign In</button>
+            </form>
+
+            <p class="note">
+                New to FoodNest?
+                <a href="/signup" class="link">Create an account</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
