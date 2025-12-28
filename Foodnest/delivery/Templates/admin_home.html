@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="{% static 'admin_home.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="top-bar">
+            <h1 class="logo">FoodNest Admin</h1>
+
+        </header>
+
+        <main class="card">
+            <h3 class="title">Welcome to Admin HOME!</h3>
+
+            <div class="links">
+                <a href="open_add_restaurant" class="btn-primary">Add New Restaurant</a>
+                <a href="open_show_restaurant" class="btn-secondary">Show Restaurants</a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2025 FoodNest. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

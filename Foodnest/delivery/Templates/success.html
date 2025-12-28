@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Added Successfully</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'success.css' %}">
+</head>
+<body>
+    <div class="success-container">
+        <div class="loader"></div>
+        <div class="success-content">
+            <div class="checkmark">✅</div>
+            <h1>Welcome, {{ user.username }}!</h1>
+            <p>You have successfully added the restaurant.</p>
+        </div>
+    </div>
+</body>
+</html>

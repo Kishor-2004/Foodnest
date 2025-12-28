@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management</title>
+    <link rel="stylesheet" href="{% static 'show_restaurant.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>🍽️ Restaurant Management</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Restaurant Name</th>
+                    <th>Picture</th>
+                    <th>Cuisine</th>
+                    <th>Rating</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in restaurantList %}
+                <tr>
+                    <td data-label="Restaurant Name">{{ r.name }}</td>
+                    <td data-label="Picture">
+                        <img src="{{ r.picture }}" alt="{{ r.name }}" class="restaurant-img">
+                    </td>
+                    <td data-label="Cuisine" class="cuisine">{{ r.cuisine }}</td>
+                    <td data-label="Rating" class="rating">{{ r.rating }}</td>
+                    <td data-label="Operations" class="operations">
+                        <a href="{% url 'open_update_restaurant' r.id %}" class="update-info">Update Restaurant Info</a>
+                        <a href="{% url 'delete_restaurant' r.id %}" class="delete">Delete Restaurant</a>
+                        <a href="{% url 'open_update_menu' r.id %}" class="update-menu">Update Menu</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

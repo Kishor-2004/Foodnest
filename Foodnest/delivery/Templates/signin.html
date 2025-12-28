@@ -12,7 +12,7 @@
             <h1 class="brand">Welcome back</h1>
             <p class="tagline">Sign in to continue ordering from FoodNest.</p>
 
-            <form method="post" class="form">
+            <form method="post" action = {% url 'signin' %} class="form">
                 {% csrf_token %}
                 <div class="field">
                     <label for="username">Username or Email</label>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Menu</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'customer_menu.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h3 class="welcome">Welcome {{username}}!</h3>
+        
+        <div class="header-actions">
+            <a href="#" class="cart-btn">Go to cart</a>
+        </div>
+
+        <!-- show current menu -->
+        <div class="table-container">
+            <table class="menu-table">
+                <thead>
+                    <tr>
+                        <th>Item name</th>
+                        <th>Picture</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Is veg?</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in itemList %}
+                        <tr class="menu-item">
+                            <td class="item-name">{{ item.name }}</td>
+                            <td class="item-image">
+                                <img src="{{ item.picture }}" alt="{{ item.name }}">
+                            </td>
+                            <td class="item-desc">{{ item.description }}</td>
+                            <td class="item-price">{{ item.price }}</td>
+                            <td class="item-veg">
+                                {% if item.vegeterian %}
+                                    <span class="veg">✓ Veg</span>
+                                {% else %}
+                                    <span class="non-veg">✗ Non-Veg</span>
+                                {% endif %}
+                            </td>
+                            <td class="item-action">
+                                <a href="#" class="add-cart">Add to cart</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

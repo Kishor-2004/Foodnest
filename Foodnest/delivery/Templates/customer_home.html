@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Page</title>
+    <link rel="stylesheet" href="{% static 'customer_home.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h3 class="welcome-text">Welcome <span class="username">{{username}}</span>!</h3>
+            <a href="" class="go-to-cart-btn">
+                <span class="cart-icon">🛒</span>
+                Go to Cart
+            </a>
+        </header>
+
+        <div class="table-container">
+            <table class="restaurant-table">
+                <thead>
+                    <tr>
+                        <th>Restaurant name</th>
+                        <th>Picture</th>
+                        <th>Cuisine</th>
+                        <th>Rating</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in restaurantList %}
+                        <tr class="restaurant-row">
+                            <td class="restaurant-name">{{ r.name }}</td>
+                            <td class="restaurant-image-cell">
+                                <div class="image-wrapper">
+                                    <img src="{{ r.picture }}" alt="{{ r.name }}" class="restaurant-image">
+                                </div>
+                            </td>
+                            <td class="cuisine">{{ r.cuisine }}</td>
+                            <td class="rating">
+                                <span class="rating-stars">{{ r.rating }}</span>
+                                <span class="rating-text">/5</span>
+                            </td>
+                            <td class="operations">
+                                <a href="{% url 'view_menu' r.id username %}" class="view-menu-btn">
+                                    View Menu
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
