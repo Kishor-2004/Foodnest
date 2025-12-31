@@ -1,6 +1,9 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-from .models import User,Restaurant,Item
+from django.shortcuts import get_object_or_404, redirect, render
+import razorpay
+
+from Foodnest import settings
+from .models import User,Restaurant,Item,Cart
 
 def index(request):
     return render(request, "index.html")
@@ -69,7 +72,7 @@ def add_restaurant(request):
                 cuisine = cuisine,
                 rating = rating,
             )
-    return render(request,'success.html')
+    return render(request,'restaurant_added.html')
         #return render(request, 'admin_home.html')
 def open_show_restaurant(request):
     restaurantList = Restaurant.objects.all()
@@ -144,3 +147,66 @@ def delete_restaurant(request, restaurant_id):
 
     restaurantList = Restaurant.objects.all()
     return render(request, 'show_restaurants.html',{"restaurantList" : restaurantList})
+
+def add_to_cart(request, item_id, username):
+    item = Item.objects.get(id = item_id)
+    customer = User.objects.get(username = username)
+
+    cart, created = Cart.objects.get_or_create(customer = customer)
+
+    cart.items.add(item)
+
+    return render(request,'success.html')
+
+def show_cart(request, username):
+    customer = User.objects.get(username = username)
+    cart = Cart.objects.filter(customer=customer).first()
+    items = cart.items.all() if cart else []
+    total_price = cart.total_price() if cart else 0
+
+    return render(request, 'cart.html',{"itemList" : items, "total_price" : total_price, "username":username})
+
+def remove_from_cart(request, item_id, username):
+    if request.method == 'POST':
+        item = Item.objects.get(id=item_id)
+        customer = User.objects.get(username=username)
+        cart = Cart.objects.filter(customer=customer).first()
+        if cart:
+            cart.items.remove(item)
+        return redirect('show_cart', username=username)
+    return HttpResponse("Invalid request method")
+
+
+def checkout(request, username):
+    # Fetch customer and their cart
+    customer = get_object_or_404(User, username=username)
+    cart = Cart.objects.filter(customer=customer).first()
+    cart_items = cart.items.all() if cart else []
+    total_price = cart.total_price() if cart else 0
+
+    if total_price == 0:
+        return render(request, 'checkout.html', {
+            'error': 'Your cart is empty!',
+        })
+    
+    # Initialize Razorpay client
+    client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
+
+    # Create Razorpay order
+    order_data = {
+        'amount': int(total_price * 100),  # Amount in paisa
+        'currency': 'INR',
+        'payment_capture': '1',  # Automatically capture payment
+    }
+    order = client.order.create(data=order_data)
+
+    # Pass the order details to the frontend
+    return render(request, 'checkout.html', {
+        'username': username,
+        'cart_items': cart_items,
+        'total_price': total_price,
+        'razorpay_key_id': settings.RAZORPAY_KEY_ID,
+        'order_id': order['id'],  # Razorpay order ID
+        'amount': total_price,
+    })
+

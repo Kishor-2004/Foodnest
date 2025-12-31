@@ -1,0 +1,215 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4 30%, #fbc2eb 60%, #a18cd1);
+    color: #222;
+    padding: 24px;
+    min-height: 100vh;
+}
+
+/* Layout container */
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 24px 28px 32px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+/* Greeting */
+.greeting {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2b2d42;
+    margin-bottom: 24px;
+}
+
+/* Cart table */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+/* Table head with colorful gradient */
+.cart-table thead {
+    background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #5f27cd);
+}
+
+.cart-table thead th {
+    color: #ffffff;
+    padding: 16px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Table body cells */
+.cart-table tbody td {
+    padding: 16px 12px;
+    border-top: 1px solid #f0f0f0;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+/* Zebra striping */
+.cart-table tbody tr:nth-child(odd) {
+    background-color: #fff7fb;
+}
+
+.cart-table tbody tr:nth-child(even) {
+    background-color: #f7fbff;
+}
+
+/* Hover effect */
+.cart-table tbody tr:hover {
+    background-color: #fffbea;
+    box-shadow: inset 4px 0 0 #ff9f43;
+}
+
+/* Image styling */
+.item-image-cell img {
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    border: 2px solid #ff9f43;
+    box-shadow: 0 4px 8px rgba(255, 159, 67, 0.3);
+}
+
+/* Price cell styling */
+.price-cell {
+    font-weight: 600;
+    color: #2b2d42;
+    font-size: 15px;
+}
+
+/* Operations cell */
+.operations-cell {
+    text-align: center;
+}
+
+/* Remove button */
+.btn-remove {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff4757, #ff6b7a);
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.4);
+    text-align: center;
+}
+
+.btn-remove:hover {
+    background: linear-gradient(135deg, #ff3742, #ff5a6a);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(255, 71, 87, 0.5);
+    color: #ffffff !important;
+}
+
+.btn-remove:active {
+    transform: translateY(0);
+}
+
+/* Empty cart message */
+.empty-cart {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* Checkout section */
+.checkout-section {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 20px 24px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Total price */
+.total-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Checkout button */
+.checkout-btn {
+    background: linear-gradient(135deg, #00d2d3, #11998e);
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 18px rgba(0, 210, 211, 0.4);
+}
+
+.checkout-btn:hover {
+    background: linear-gradient(135deg, #00b8b9, #0e8c7a);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 210, 211, 0.5);
+}
+
+.checkout-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 16px 20px 24px;
+        margin: 10px;
+    }
+
+    .cart-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: 16px;
+    }
+
+    .checkout-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+    }
+
+    .total-price {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+}

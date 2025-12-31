@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="{% static 'cart.css' %}">
+</head>
+<body>
+    <div class="page-container">
+        <p class="greeting">Hello {{ username }}</p>
+
+        <!-- Cart table with Operations column -->
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Item Image</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in itemList %}
+                    <tr>
+                        <td class="item-image-cell">
+                            <img src="{{ item.picture }}" alt="{{ item.name }}">
+                        </td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.description }}</td>
+                        <td class="price-cell">{{ item.price }}</td>
+                        <td class="operations-cell">
+                            <form method="post" action="{% url 'remove_from_cart' item.id username %}" style="display: inline;">
+                                {% csrf_token %}
+                             <button type="submit" class="btn-remove" onclick="return confirm('Remove {{ item.name }}?')">Remove</button>
+                             </form>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="5" class="empty-cart">Your cart is empty</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% if itemList %}
+        <div class="checkout-section">
+            <h2 class="total-price">Total price: {{ total_price }}</h2>
+            <form method="post" action="{% url 'checkout' username %}">
+                {% csrf_token %}
+                <input type="submit" value="CHECK OUT" class="checkout-btn">
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

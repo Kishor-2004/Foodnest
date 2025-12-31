@@ -1,0 +1,142 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.success-wrapper { width: 100%; max-width: 500px; }
+
+.success-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 48px 32px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.checkmark-circle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+    animation: bounceIn 0.6s ease-out;
+}
+
+.checkmark {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+}
+
+.checkmark::before, .checkmark::after {
+    content: '';
+    position: absolute;
+    background: #4CAF50;
+}
+
+.checkmark::before {
+    width: 12px;
+    height: 24px;
+    left: 14px;
+    top: 8px;
+    transform: rotate(45deg);
+    border-radius: 3px 0 0 3px;
+}
+
+.checkmark::after {
+    width: 12px;
+    height: 12px;
+    left: 7px;
+    top: 18px;
+    transform: rotate(-45deg);
+    border-radius: 0 0 3px 3px;
+}
+
+.success-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+}
+
+.success-message {
+    color: #5a6c7d;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+.primary {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6);
+}
+
+.secondary {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.secondary:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-3px);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+    .success-card { padding: 32px 24px; }
+    .success-title { font-size: 1.8rem; }
+    .action-buttons { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 220px; }
+}

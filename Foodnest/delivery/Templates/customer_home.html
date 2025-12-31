@@ -11,7 +11,7 @@
     <div class="container">
         <header class="header">
             <h3 class="welcome-text">Welcome <span class="username">{{username}}</span>!</h3>
-            <a href="" class="go-to-cart-btn">
+            <a href="{% url 'show_cart' username %}" class="go-to-cart-btn">
                 <span class="cart-icon">🛒</span>
                 Go to Cart
             </a>
