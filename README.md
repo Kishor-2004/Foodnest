@@ -1,116 +1,67 @@
-# 🍽️ Foodnest  
-### Python Full-Stack Online Food Ordering System
-
-<p align="center">
-  <img src="screenshots/banner.png" alt="Foodnest Banner" width="90%">
-</p>
-
-Foodnest is a **Python Django–based full-stack food ordering web application** that enables users to browse food items, add them to a cart, and place orders online, while administrators manage food menus, restaurants, and orders through a secure admin dashboard.
-
-This project demonstrates **real-world full-stack development**, clean UI design, and role-based authentication.
-
----
-
-## 🚀 Project Highlights
-
-- User & Admin authentication
-- Complete food ordering workflow
-- Cart & payment interface
-- Admin & user dashboards
-- Responsive UI design
-- SQLite database integration
-
----
+# Foodnest – Python Full Stack Food Delivery App
+Foodnest is a full stack web application for ordering food online, built with Python on the backend and modern web technologies on the frontend.
 
 ## ✨ Features
 
-### 👤 User Features
-- User Signup & Signin
-- Browse food items
-- Add items to cart
-- Place orders
-- Payment interface
-- User options dashboard
-
-### 🛠️ Admin Features
-- Secure admin login
-- Admin options dashboard
-- Add / update restaurants
-- Manage food menu
-- View user orders
-
----
-
-## 🖼️ Application Screenshots
-
-> 📌 All screenshots are stored inside the `screenshots/` folder
-
----
-
-### 🔐 Authentication Pages
-
-<table>
-  <tr>
-    <th>Signup</th>
-    <th>Signin</th>
-  </tr>
-  <tr>
-    <td><img src="screenshots/signup.png" width="100%"></td>
-    <td><img src="screenshots/signin.png" width="100%"></td>
-  </tr>
-</table>
-
----
-
-### 🧑‍💼 Admin Login & Dashboard
-
-<table>
-  <tr>
-    <th>Admin Login</th>
-    <th>Admin Options</th>
-  </tr>
-  <tr>
-    <td><img src="screenshots/adminlogin.png" width="100%"></td>
-    <td><img src="screenshots/adminoptions.png" width="100%"></td>
-  </tr>
-</table>
-
----
-
-### 👤 User Dashboard & Cart
-
-<table>
-  <tr>
-    <th>User Options</th>
-    <th>Cart</th>
-  </tr>
-  <tr>
-    <td><img src="screenshots/useroptions.png" width="100%"></td>
-    <td><img src="screenshots/cart.png" width="100%"></td>
-  </tr>
-</table>
-
----
-
-### 💳 Payment Interface
-
-<p align="center">
-  <img src="screenshots/paymentinterface.png" alt="Payment Interface" width="60%">
-</p>
-
----
+- User registration and authentication for customers and admins
+- Restaurant and menu management (CRUD operations)
+- Search and filter food items by category, price, cuisine
+- Shopping cart management and order checkout
+- Order history and real-time status tracking
+- Responsive design for desktop and mobile
+- Admin dashboard for restaurant owners
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|------|-----------|
-| Backend | Python (Django) |
-| Frontend | HTML5, CSS3, JavaScript |
-| UI Framework | Bootstrap |
-| Database | SQLite |
-| Version Control | Git & GitHub |
+- **Backend:** Python (Django/Flask)
+- **Frontend:** HTML5, CSS3, JavaScript, Bootstrap
+- **Database:** SQLite/MySQL/PostgreSQL
+- **Deployment:** Docker ready
+
+## 📁 Project Structure
+Foodnest/
+├── manage.py              # Django management script
+├── requirements.txt       # Python dependencies
+├── static/               # CSS, JS, Images
+├── templates/            # HTML templates
+├── media/                # User uploaded files
+└── foodnest/             # Main Django app
+├── models.py         # Database models
+├── views.py          # Request handlers
+├── urls.py           # URL routing
+└── admin.py          # Admin interface
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+
+- pip
+- Git
+
+### Installationgit clone https://github.com/Kishor-2004/Foodnest.git
+cd Foodnest
+python -m venv venv && source venv/bin/activate  # Linux/Macvenv\Scripts\activate  # Windowspip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserverVisit `http://127.0.0.1:8000/`
+
+## 📱 Demo Features
+
+- **Customer:** Browse menu → Add to cart → Checkout → Track order
+- **Admin:** Manage restaurants → Add/Edit menu → View orders → Update status
+
+## 🔮 Future Enhancements
+
+- Payment gateway integration (Razorpay/Stripe)
+- Real-time notifications (WebSockets)
+- User ratings & reviews
+- Delivery tracking with maps
+- Push notifications
+- Multi-restaurant support
+
+## 📄 License
+
+MIT License - Feel free to use for learning and development purposes.
 
 ---
 
-## 📁 Project Structure
-
+**Made with ❤️ by [Krishna Kishor](https://github.com/Kishor-2004)**
