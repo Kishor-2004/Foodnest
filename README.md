@@ -1,67 +1,59 @@
-# Foodnest – Python Full Stack Food Delivery App
-Foodnest is a full stack web application for ordering food online, built with Python on the backend and modern web technologies on the frontend.
+🍽️ Foodnest
+Python Full-Stack Online Food Ordering System
+<p align="center"> <img src="screenshots/banner.png" alt="Foodnest Banner" width="90%"> </p>
 
-## ✨ Features
+Foodnest is a Python Django–based full-stack food ordering web application that allows users to browse food items, manage carts, and place orders, while administrators handle food management and user operations via a secure dashboard.
 
-- User registration and authentication for customers and admins
-- Restaurant and menu management (CRUD operations)
-- Search and filter food items by category, price, cuisine
-- Shopping cart management and order checkout
-- Order history and real-time status tracking
-- Responsive design for desktop and mobile
-- Admin dashboard for restaurant owners
+This project reflects real-world full-stack development, role-based authentication, and clean UI design.
 
-## 🛠️ Tech Stack
+🚀 Project Highlights
 
-- **Backend:** Python (Django/Flask)
-- **Frontend:** HTML5, CSS3, JavaScript, Bootstrap
-- **Database:** SQLite/MySQL/PostgreSQL
-- **Deployment:** Docker ready
+User & Admin authentication
 
-## 📁 Project Structure
-Foodnest/
-├── manage.py              # Django management script
-├── requirements.txt       # Python dependencies
-├── static/               # CSS, JS, Images
-├── templates/            # HTML templates
-├── media/                # User uploaded files
-└── foodnest/             # Main Django app
-├── models.py         # Database models
-├── views.py          # Request handlers
-├── urls.py           # URL routing
-└── admin.py          # Admin interface
-## 🚀 Quick Start
+Complete food ordering workflow
 
-### Prerequisites
-- Python 3.8+
-- pip
-- Git
+Cart and payment interface
 
-### Installationgit clone https://github.com/Kishor-2004/Foodnest.git
-cd Foodnest
-python -m venv venv && source venv/bin/activate  # Linux/Macvenv\Scripts\activate  # Windowspip install -r requirements.txt
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserverVisit `http://127.0.0.1:8000/`
+Admin & user dashboards
 
-## 📱 Demo Features
+Responsive UI design
 
-- **Customer:** Browse menu → Add to cart → Checkout → Track order
-- **Admin:** Manage restaurants → Add/Edit menu → View orders → Update status
+SQLite database integration
 
-## 🔮 Future Enhancements
+✨ Features
+👤 User Features
 
-- Payment gateway integration (Razorpay/Stripe)
-- Real-time notifications (WebSockets)
-- User ratings & reviews
-- Delivery tracking with maps
-- Push notifications
-- Multi-restaurant support
+User signup & signin
 
-## 📄 License
+Browse food items
 
-MIT License - Feel free to use for learning and development purposes.
+Add items to cart
 
----
+Place orders
 
-**Made with ❤️ by [Krishna Kishor](https://github.com/Kishor-2004)**
+Payment interface
+
+User options dashboard
+
+🛠️ Admin Features
+
+Secure admin login
+
+Admin options dashboard
+
+Manage food items
+
+View user activities
+
+🖼️ Application Screenshots
+
+📌 All screenshots are stored in the screenshots/ folder
+
+🔐 Authentication Pages
+<table> <tr> <td align="center"><b>Signup</b></td> <td align="center"><b>Signin</b></td> </tr> <tr> <td><img src="screenshots/signup.png" width="100%"></td> <td><img src="screenshots/signin.png" width="100%"></td> </tr> </table>
+🧑‍💼 Admin Login & Dashboard
+<table> <tr> <td align="center"><b>Admin Login</b></td> <td align="center"><b>Admin Options</b></td> </tr> <tr> <td><img src="screenshots/adminlogin.png" width="100%"></td> <td><img src="screenshots/adminoptions.png" width="100%"></td> </tr> </table>
+👤 User Dashboard & Cart
+<table> <tr> <td align="center"><b>User Options</b></td> <td align="center"><b>Cart</b></td> </tr> <tr> <td><img src="screenshots/useroptions.png" width="100%"></td> <td><img src="screenshots/cart.png" width="100%"></td> </tr> </table>
+💳 Payment Interface
+<p align="center"> <img src="screenshots/paymentinterface.png" alt="Payment Interface" width="60%"> </p>
