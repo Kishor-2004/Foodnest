@@ -5,9 +5,9 @@
   <img src="screenshots/banner.png" alt="Foodnest Banner" width="90%">
 </p>
 
-Foodnest is a **Python Django–based full-stack food ordering web application** that allows users to browse food items, manage carts, and place orders seamlessly, while administrators manage food operations through a secure dashboard.
+Foodnest is a **Python Django–based full-stack food ordering web application** that allows users to browse food items, add them to a cart, and place orders online, while administrators manage food items and users through a secure dashboard.
 
-This project demonstrates **real-world full-stack development**, clean UI design, and role-based authentication.
+This project showcases **real-world full-stack development**, role-based authentication, and clean UI design.
 
 ---
 
@@ -15,9 +15,9 @@ This project demonstrates **real-world full-stack development**, clean UI design
 
 - User & Admin authentication
 - Complete food ordering workflow
-- Cart & payment interface
+- Cart and payment interface
 - Admin & user dashboards
-- Responsive UI design
+- Responsive UI
 - SQLite database integration
 
 ---
@@ -35,14 +35,15 @@ This project demonstrates **real-world full-stack development**, clean UI design
 ### 🛠️ Admin Features
 - Secure admin login
 - Admin options dashboard
-- Manage food items
+- Add / update restaurants
+- Manage food menu
 - View user orders
 
 ---
 
 ## 🖼️ Application Screenshots
 
-> 📌 All screenshots are stored in the `screenshots/` folder
+> 📌 All screenshots are stored inside the `screenshots/` folder
 
 ---
 
