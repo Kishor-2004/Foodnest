@@ -1,59 +1,115 @@
-🍽️ Foodnest
-Python Full-Stack Online Food Ordering System
-<p align="center"> <img src="screenshots/banner.png" alt="Foodnest Banner" width="90%"> </p>
+# 🍽️ Foodnest  
+### Python Full-Stack Online Food Ordering System
 
-Foodnest is a Python Django–based full-stack food ordering web application that allows users to browse food items, manage carts, and place orders, while administrators handle food management and user operations via a secure dashboard.
+<p align="center">
+  <img src="screenshots/banner.png" alt="Foodnest Banner" width="90%">
+</p>
 
-This project reflects real-world full-stack development, role-based authentication, and clean UI design.
+Foodnest is a **Python Django–based full-stack food ordering web application** that allows users to browse food items, manage carts, and place orders seamlessly, while administrators manage food operations through a secure dashboard.
 
-🚀 Project Highlights
+This project demonstrates **real-world full-stack development**, clean UI design, and role-based authentication.
 
-User & Admin authentication
+---
 
-Complete food ordering workflow
+## 🚀 Project Highlights
 
-Cart and payment interface
+- User & Admin authentication
+- Complete food ordering workflow
+- Cart & payment interface
+- Admin & user dashboards
+- Responsive UI design
+- SQLite database integration
 
-Admin & user dashboards
+---
 
-Responsive UI design
+## ✨ Features
 
-SQLite database integration
+### 👤 User Features
+- User Signup & Signin
+- Browse food items
+- Add items to cart
+- Place orders
+- Payment interface
+- User options dashboard
 
-✨ Features
-👤 User Features
+### 🛠️ Admin Features
+- Secure admin login
+- Admin options dashboard
+- Manage food items
+- View user orders
 
-User signup & signin
+---
 
-Browse food items
+## 🖼️ Application Screenshots
 
-Add items to cart
+> 📌 All screenshots are stored in the `screenshots/` folder
 
-Place orders
+---
 
-Payment interface
+### 🔐 Authentication Pages
 
-User options dashboard
+<table>
+  <tr>
+    <th>Signup</th>
+    <th>Signin</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/signup.png" width="100%"></td>
+    <td><img src="screenshots/signin.png" width="100%"></td>
+  </tr>
+</table>
 
-🛠️ Admin Features
+---
 
-Secure admin login
+### 🧑‍💼 Admin Login & Dashboard
 
-Admin options dashboard
+<table>
+  <tr>
+    <th>Admin Login</th>
+    <th>Admin Options</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/adminlogin.png" width="100%"></td>
+    <td><img src="screenshots/adminoptions.png" width="100%"></td>
+  </tr>
+</table>
 
-Manage food items
+---
 
-View user activities
+### 👤 User Dashboard & Cart
 
-🖼️ Application Screenshots
+<table>
+  <tr>
+    <th>User Options</th>
+    <th>Cart</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/useroptions.png" width="100%"></td>
+    <td><img src="screenshots/cart.png" width="100%"></td>
+  </tr>
+</table>
 
-📌 All screenshots are stored in the screenshots/ folder
+---
 
-🔐 Authentication Pages
-<table> <tr> <td align="center"><b>Signup</b></td> <td align="center"><b>Signin</b></td> </tr> <tr> <td><img src="screenshots/signup.png" width="100%"></td> <td><img src="screenshots/signin.png" width="100%"></td> </tr> </table>
-🧑‍💼 Admin Login & Dashboard
-<table> <tr> <td align="center"><b>Admin Login</b></td> <td align="center"><b>Admin Options</b></td> </tr> <tr> <td><img src="screenshots/adminlogin.png" width="100%"></td> <td><img src="screenshots/adminoptions.png" width="100%"></td> </tr> </table>
-👤 User Dashboard & Cart
-<table> <tr> <td align="center"><b>User Options</b></td> <td align="center"><b>Cart</b></td> </tr> <tr> <td><img src="screenshots/useroptions.png" width="100%"></td> <td><img src="screenshots/cart.png" width="100%"></td> </tr> </table>
-💳 Payment Interface
-<p align="center"> <img src="screenshots/paymentinterface.png" alt="Payment Interface" width="60%"> </p>
+### 💳 Payment Interface
+
+<p align="center">
+  <img src="screenshots/paymentinterface.png" alt="Payment Interface" width="60%">
+</p>
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|------|-----------|
+| Backend | Python (Django) |
+| Frontend | HTML5, CSS3, JavaScript |
+| UI | Bootstrap |
+| Database | SQLite |
+| Version Control | Git & GitHub |
+
+---
+
+## 📁 Project Structure
+
