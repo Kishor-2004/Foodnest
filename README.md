@@ -17,8 +17,9 @@ Foodnest is a full stack web application for ordering food online, built with Py
 - **Frontend:** HTML5, CSS3, JavaScript, Bootstrap
 - **Database:** SQLite/MySQL/PostgreSQL
 - **Deployment:** Docker ready
-'''text
+  
 ## 📁 Project Structure
+'''text
 Foodnest/
 ├── manage.py              # Django management script
 ├── requirements.txt       # Python dependencies
