@@ -40,13 +40,14 @@ Foodnest/
 - Git
 
 ### Installationgit clone https://github.com/Kishor-2004/Foodnest.git
-'''text
+```
 cd Foodnest
 python -m venv venv && source venv/bin/activate  # Linux/Macvenv\Scripts\activate  # Windowspip install -r requirements.txt
 python manage.py migrate
 python manage.py createsuperuser
-python manage.py runserverVisit `http://127.0.0.1:8000/`
-'''
+python manage.py runserverVisit `http://127.0.0.1:8000/
+```
+
 
 ## 📱 Demo Features
 
